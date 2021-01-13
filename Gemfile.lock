@@ -1,0 +1,23 @@
+PATH
+  remote: .
+  specs:
+    gitgrass (0.1.0)
+      rainbow
+      thor
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rainbow (3.0.0)
+    rake (13.0.3)
+    thor (1.0.1)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  gitgrass!
+  rake (~> 13.0)
+
+BUNDLED WITH
+   2.2.3
