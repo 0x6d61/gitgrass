@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     gitgrass (0.1.0)
-      rainbow
-      thor
+      rainbow (~> 3.0)
+      thor (~> 1.0, >= 1.0.1)
 
 GEM
   remote: https://rubygems.org/
