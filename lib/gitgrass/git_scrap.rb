@@ -1,6 +1,6 @@
 require "open-uri"
 require "rainbow"
-require "date"
+require "date"  
 
 class GitScrap
   attr_reader :tile_table
