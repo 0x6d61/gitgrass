@@ -6,11 +6,11 @@ class GitScrap
   attr_reader :tile_table
   attr_writer :year
   GITHUB_URL = "https://github.com/"
-  TILE_COLOR = { bg: Rainbow("[]").color(235, 237, 240).background(235, 237, 240),
-                 L1: Rainbow("[]").color(155, 233, 168).background(155, 233, 168),
-                 L2: Rainbow("[]").color(111, 197, 100).background(111, 197, 100),
-                 L3: Rainbow("[]").color(90, 162, 79).background(90, 162, 79),
-                 L4: Rainbow("[]").color(59, 111, 58).background(59, 111, 58),
+  TILE_COLOR = { "0": Rainbow("[]").color(235, 237, 240).background(235, 237, 240),
+                 "1": Rainbow("[]").color(155, 233, 168).background(155, 233, 168),
+                 "2": Rainbow("[]").color(111, 197, 100).background(111, 197, 100),
+                 "3": Rainbow("[]").color(90, 162, 79).background(90, 162, 79),
+                 "4": Rainbow("[]").color(59, 111, 58).background(59, 111, 58),
                  dummy: Rainbow("[]").color(0, 0, 0).background(0, 0, 0) }
 
   def initialize(user)
@@ -22,7 +22,7 @@ class GitScrap
     url = @year ? "#{GITHUB_URL}#{@user}?tab=overview&from=#{@year}-01-01&to=#{@year}-12-31" : "#{GITHUB_URL}#{@user}"
     html = URI(url)
     body = html.read
-    body.scan(/<rect.*--color-calendar-graph-day-(bg|L1|L2|L3|L4).*>/)
+    body.scan(/<rect.*data-count=.*data-level="(0|1|2|3|4)".*>/)
   end
 
   def make_grass_table
